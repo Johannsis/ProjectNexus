@@ -1,0 +1,30 @@
+<div>
+  <h2>Paquetes de Sanchez</h2>
+  <div class="card d-inline-flex" style="width: 30%; margin: 15px;" *ngFor="let package of packages">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{ package.description }}
+      </h5>
+      <p class="card-text">
+        <span class="d-block">
+          <span style="font-weight: bold;">Peso: </span>{{ package.weight }}
+        </span>
+        <span class="d-block">
+          <span style="font-weight: bold;">Precio: </span>{{ package.priceToPay }}
+        </span>
+        <span class="d-block">
+          <span style="font-weight: bold;">Suplidor: </span>{{ package.supplier }}
+        </span>
+        <span class="d-block">
+          <span style="font-weight: bold;">Courier: </span>{{ package.courier }}
+        </span>
+        <span class="d-block">
+          <span style="font-weight: bold;">ID Courier: </span>{{ package.courierTracking }}
+        </span>
+        <span class="d-block">
+          <span style="font-weight: bold;">ID Tracking: </span>{{ package.internalTracking }}
+        </span>
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent" class="pt-5">
+    <input type="text" id="login" class="fadeIn second" placeholder="Username" [(ngModel)]="username" />
+    <input type="password" id="password" class="fadeIn third" placeholder="Password" [(ngModel)]="password" />
+    <button type="button" class="fadeIn fourth" (click)="login()" [disabled]="pruebaLogin===0">Login</button>
+  </div>
+</div>

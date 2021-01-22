@@ -1,0 +1,23 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer {
+    color: white;
+    height: 47px;
+    background: rgba(51,51,51,0.70);
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 45px;
+}
