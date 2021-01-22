@@ -6,15 +6,16 @@ import { LoginService } from '../services/login.service';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [LoginService]
+  providers: []
 })
 export class LoginComponent {
+
   public username: string = null;
   public password: string = null;
   public pruebaLogin: number = 3;
   public regExp: RegExp = /^[a-zA-Z0-9]*$/;
 
-  constructor(private loginService: LoginService,
+  constructor(public loginService: LoginService,
               private router:Router) { }
 
   public isEmptyOrSpaces(text: string): boolean {
@@ -48,7 +49,8 @@ export class LoginComponent {
     }
 
     this.loginService.login(this.username,this.password).subscribe((response: any) => {
-      if (response.success === true){
+      if (response.success){
+        this.loginService.user=response.responseObject.fullName;
         this.router.navigate(['/home']);
       } else{
         if(this.pruebaLogin > 0){

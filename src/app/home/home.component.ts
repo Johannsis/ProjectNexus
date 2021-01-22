@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../services/login.service';
 import { PackagesService } from '../services/packages.service';
 
 @Component({
@@ -9,19 +10,16 @@ import { PackagesService } from '../services/packages.service';
 })
 export class HomeComponent implements OnInit {
 
+
   packages: any[] = null;
 
-  constructor(private packagesService: PackagesService) {}
-
-
+  constructor(private packagesService: PackagesService,
+              public loginService: LoginService) {}
 
   getPackages(){
     this.packagesService.getPackages().subscribe((response: any) => {
-
-      console.log(response);
       
       this.packages=response.responseObject;
-      
 
     })
   }

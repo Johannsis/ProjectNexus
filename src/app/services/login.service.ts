@@ -6,10 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LoginService {
 
-  constructor(private _http: HttpClient) {}
+  public user: string = null;
+
+  constructor(public _http: HttpClient) {}
   
 
-  login(username: string, password: string){
+  public login(username: string, password: string){
     return this._http.post('https://cors-anywhere.herokuapp.com/https://courierdemo.azurewebsites.net/api/membership/login', {
       username: username, 
       password: password
